@@ -1,27 +1,31 @@
+/* eslint-disable react/prop-types */
+
+import css from './Profile.module.css';
+
 const Profile = ({ name, tag, location, image, stats }) => {
 	const { followers, views, likes } = stats;
 
 	return (
-		<div>
-			<div>
-				<img src={image} alt='User avatar' />
-				<p>{name}</p>
-				<p>{tag}</p>
-				<p>{location}</p>
+		<div className={css.profile}>
+			<div className={css.description}>
+				<img src={image} alt='User avatar' className={css.avatar} />
+				<p className={css.profileName}>{name}</p>
+				<p className={css.profileTag}>{tag}</p>
+				<p className={css.profileLocation}>{location}</p>
 			</div>
 
-			<ul>
-				<li>
-					<span>Followers</span>
-					<span>{followers}</span>
+			<ul className={css.stats}>
+				<li className={css.followersList}>
+					<span className={css.label}>Followers</span>
+					<span className={css.quantity}>{followers}</span>
 				</li>
-				<li>
-					<span>Views</span>
-					<span>{views}</span>
+				<li className={css.viewsList}>
+					<span className={css.label}>Views</span>
+					<span className={css.quantity}>{views}</span>
 				</li>
-				<li>
-					<span>Likes</span>
-					<span>{likes}</span>
+				<li className={css.likesList}>
+					<span className={css.label}>Likes</span>
+					<span className={css.quantity}>{likes}</span>
 				</li>
 			</ul>
 		</div>

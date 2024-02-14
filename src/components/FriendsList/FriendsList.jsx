@@ -1,13 +1,22 @@
 /* eslint-disable react/prop-types */
+import clsx from 'clsx';
+import css from './FriendsList.module.css';
 const FriendsList = ({ friends }) => {
 	return (
-		<ul>
+		<ul className={css.friendsList}>
 			{friends.map(({ avatar, name, isOnline, id }) => {
 				return (
-					<li key={id}>
+					<li className={css.friendsListItem} key={id}>
 						<img src={avatar} alt={name} width='48' />
-						<p>{name}</p>
-						<p>{isOnline ? 'Online' : 'Offline'}</p>
+						<p className={css.friendsName}>{name}</p>
+						<p
+							className={clsx(css.friendsStatus, {
+								[css.statusOnline]: isOnline,
+								[css.statusOffline]: !isOnline,
+							})}
+						>
+							{isOnline ? 'Online' : 'Offline'}
+						</p>
 					</li>
 				);
 			})}
