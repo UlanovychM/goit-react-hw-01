@@ -10,17 +10,17 @@ const TransactionHistory = ({ items }) => {
 					<th className={css.columnHeader}>Currency</th>
 				</tr>
 			</thead>
-			{items.map(({ id, type, amount, currency }) => {
-				return (
-					<tbody className={css.valuesRow} key={id}>
-						<tr>
+			<tbody className={css.valuesRow}>
+				{items.map(({ id, type, amount, currency }) => {
+					return (
+						<tr key={id}>
 							<td className={css.transactionData}>{type}</td>
 							<td className={css.transactionData}>{amount}</td>
 							<td className={css.transactionData}>{currency}</td>
 						</tr>
-					</tbody>
-				);
-			})}
+					);
+				})}
+			</tbody>
 		</table>
 	);
 };

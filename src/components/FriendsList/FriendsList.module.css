@@ -4,33 +4,3 @@
 	gap: 40px;
 }
 
-.friendsListItem {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 0 20px;
-
-	width: 80px;
-	height: 120px;
-
-	border: 2px solid;
-	padding: 0.5rem;
-
-	border-radius: 5%;
-}
-
-.friendsName {
-	font-size: 1.5rem;
-}
-
-.friendsStatus {
-	font-size: 1rem;
-}
-
-.statusOnline {
-	color: green;
-}
-
-.statusOffline {
-	color: red;
-}
